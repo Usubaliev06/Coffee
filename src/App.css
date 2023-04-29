@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital@1&family=Oswald&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chivo Mono", monospace;
+  font-family: "Oswald", sans-serif;
+}
+.container {
+  width: 1320px;
+  margin: 0 auto;
+  height: fit-content;
+}
+@media screen and (max-width: 1320px) {
+  .container {
+    width: 1140px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .container {
+    width: 960px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .container {
+    width: 720px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .container {
+    width: 576px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+}
+
+

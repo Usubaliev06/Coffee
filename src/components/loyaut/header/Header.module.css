@@ -1,0 +1,133 @@
+.headerWrapper {
+  background-color: rgb(35, 40, 48);
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  height: 120px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  gap: 20px;
+}
+.headerLeft {
+  width: 200px;
+}
+.headerLeft > img {
+  height: 60px;
+}
+.headerCenter {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerCenter > a {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding:5px  10px;
+  background-color: rgba(52, 61, 68, 0.247);
+  border-radius: 10px;
+}
+.headerCenter > a:hover{
+  background-color: rgba(134, 147, 156, 0.247);
+  transition: 0.5s;
+}
+
+.headerRight {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerRight > a {
+  font-size: 23px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(107, 78, 58);
+
+}
+.headerRight > a:hover {
+  transition: 0.5s;
+  background-color: rgb(176, 138, 112);
+  
+}
+
+
+
+
+.menu {
+  display: none;
+  font-size: 30px;
+  background-color: rgb(107, 78, 58);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+}
+.menuLinks {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  background-color: rgb(139, 139, 139);
+  padding: 10px;
+  border-radius: 20px;
+}
+.closeMenu {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 0 0 0 5px;
+  margin: 0 auto 0 auto;
+}
+.menuLinks > a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+}
+.menuLinks > button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  padding: 0 0 0 5px;
+}
+.menuNone {
+  display: none;
+}
+
+
+@media (max-width: 970px) {
+  .headerCenter {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  header{
+    align-items:start;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .headerWrapper {
+    height: fit-content;
+  } 
+
+}
