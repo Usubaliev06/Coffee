@@ -28,12 +28,7 @@ const Header = () => {
           <div className={css.headerCenter}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/menu">Menu</NavLink>
-            <NavLink to="/aboutUS">About US</NavLink>
-            <NavLink to="/registration">Regestration</NavLink>
-          </div>
-
-          <div className={css.headerRight}>
-            <NavLink to="/reservation">Book a table</NavLink>
+            <NavLink to="/aboutUS">About US</NavLink> 
           </div>
 
           <button className={menu} onClick={handleMenu}>
@@ -47,7 +42,10 @@ const Header = () => {
             <NavLink to="/"  onClick={handleMenuClose}>Home</NavLink>
             <NavLink to="/menu" onClick={handleMenuClose}>Menu</NavLink>
             <NavLink to="/aboutUS" onClick={handleMenuClose}>About US</NavLink>
-            <NavLink to="/registration" onClick={handleMenuClose}>Regestration</NavLink>
+          </div>
+
+          <div className={css.headerRight}>
+            <NavLink to="/reservation">Book a table</NavLink>
           </div>
 
         

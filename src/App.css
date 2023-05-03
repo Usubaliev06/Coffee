@@ -6,11 +6,28 @@
   font-family: "Chivo Mono", monospace;
   font-family: "Oswald", sans-serif;
 }
+
 .container {
   width: 1320px;
   margin: 0 auto;
   height: fit-content;
 }
+h1 {
+  font-size: 50px;
+  color: white;
+  font-weight: 100;
+}
+h2 {
+  color: rgb(176, 138, 112);
+  font-size: 25px;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+p {
+  color: gray;
+  font-size: 15px;
+}
+
 @media screen and (max-width: 1320px) {
   .container {
     width: 1140px;
@@ -36,5 +53,3 @@
     width: 100%;
   }
 }
-
-

@@ -1,11 +1,14 @@
 .headerWrapper {
   background-color: rgb(35, 40, 48);
   position: sticky;
-  top: 0px;
-  z-index: 1000;
-  height: 120px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100px;
+  width: 100%;
 }
 header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,11 +35,11 @@ header {
   color: white;
   text-decoration: none;
   padding:5px  10px;
-  background-color: rgba(52, 61, 68, 0.247);
-  border-radius: 10px;
+
 }
 .headerCenter > a:hover{
-  background-color: rgba(134, 147, 156, 0.247);
+  background-color: rgba(52, 61, 68, 0.526);
+  border-radius: 10px;
   transition: 0.5s;
 }
 

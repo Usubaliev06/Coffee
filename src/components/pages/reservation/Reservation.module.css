@@ -1,0 +1,99 @@
+.reservationWrapper {
+  background-color: rgb(18, 22, 29);
+  width: 100%;
+  height: fit-content;
+}
+.formWrapper {
+  padding: 50px;
+  width: 80%;
+  margin: 0px auto;
+  height: fit-content;
+  background-color: rgb(9, 14, 22);
+  text-align: center;
+  border-top: 3px solid rgb(176, 138, 112);
+}
+.formWrapper h2 {
+  margin-bottom: 20px;
+}
+.formWrapper h1 {
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+.formWrapper button {
+  padding: 15px 70px;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(176, 138, 112);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10%;
+  margin-bottom: 50px;
+}
+.leftForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+  align-items: center;
+  justify-content: center;
+}
+.leftForm input {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(240, 248, 255, 0.318);
+  border: 1px solid rgb(157, 157, 157);
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+.rightForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+  align-items: center;
+  justify-content: center;
+}
+.rightForm input {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(240, 248, 255, 0.318);
+  border: 1px solid rgb(157, 157, 157);
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+.errorWrapper{
+  margin-bottom: 20px;
+}
+.error {
+  color: red;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .leftForm {
+    width: 100%;
+  }
+  .rightForm {
+    width: 100%;
+  }
+  .formWrapper button {
+    padding: 5px 50px;
+    border: none;
+    font-size: 30px;
+  }
+}

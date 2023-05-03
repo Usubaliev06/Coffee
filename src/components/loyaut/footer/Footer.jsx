@@ -11,6 +11,7 @@ const Footer = () => {
   return (
     <div className={css.footerWrapper}>
       <div className="container">
+      <div>
         <footer>
           <div className={css.footerInfo}>
             <div className={css.logo}>
@@ -65,7 +66,7 @@ const Footer = () => {
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab2e2e24906f53d8e7e9ca6820fc85ccc395cb00bce88d7bcfb93009328158dd1&amp;source=constructor"
                 width="300"
                 height="300"
-                frameborder="0"
+                frameBorder="0"
               ></iframe>
             </div>
           </div>
@@ -74,6 +75,7 @@ const Footer = () => {
             <p>Copyright © 2022 Kaffen. All Rights Reserved.</p>
           </div>
         </footer>
+        </div>
       </div>
     </div>
   );

@@ -9,10 +9,9 @@ import Footer from './components/loyaut/footer/Footer'
 import Main from './components/pages/main/Main';
 import AboutUs from './components/pages/aboutUs/AboutUs';
 import Menu from './components/pages/menu/Menu';
-import Registration from './components/pages/registaration/Registration';
 import Reservation from './components/pages/reservation/Reservation';
 import Admin from './components/pages/admin/admin';
-
+import NotFound from './components/pages/notFound/NotFound';
 
 
 function App() {
@@ -21,13 +20,12 @@ function App() {
       <BrowserRouter >
         <Header />
         <Routes>
-          <Route path='/' element={<Main/>} />
-          <Route path='/aboutUS' element={<AboutUs/>} />
-          <Route path='/menu' element={<Menu/>} />
-          <Route path='/registration' element={<Registration/>} />
-          <Route path='/reservation' element={<Reservation/>} />
-          <Route path='/admin' element={<Admin/>} />
-          
+          <Route path='/' element={<Main />} />
+          <Route path='/aboutUS' element={<AboutUs />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/reservation' element={<Reservation />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/*' element={<NotFound/> } />
         </Routes>
         <Footer />
       </BrowserRouter>
