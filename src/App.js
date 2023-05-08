@@ -4,31 +4,45 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import Header from './components/loyaut/header/Header'
-import Footer from './components/loyaut/footer/Footer'
 import Main from './components/pages/main/Main';
 import AboutUs from './components/pages/aboutUs/AboutUs';
 import Menu from './components/pages/menu/Menu';
 import Reservation from './components/pages/reservation/Reservation';
-import Admin from './components/pages/admin/admin';
 import NotFound from './components/pages/notFound/NotFound';
+import Loyaut from './components/loyaut/Loyaut';
+import AdminLogIn from './components/pages/adminLogIn/AdminLogIn';
+import Dashboard from './components/pages/dashboard/Dashboard';
+
+import Protected from './components/protected/Protected';
+import DashboardMenu from './components/pages/dashboard/DashboardMenu';
+import DashboardStaff from './components/pages/dashboard/DashboardStaff';
 
 
 function App() {
+
+
+
   return (
     <div>
       <BrowserRouter >
-        <Header />
         <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/aboutUS' element={<AboutUs />} />
-          <Route path='/menu' element={<Menu />} />
-          <Route path='/reservation' element={<Reservation />} />
-          <Route path='/admin' element={<Admin />} />
-          <Route path='/*' element={<NotFound/> } />
+          <Route path='/' element={<Loyaut />}>
+            <Route index element={<Main />} />
+            <Route path='aboutUS' element={<AboutUs />} />
+            <Route path='menu' element={<Menu />} />
+            <Route path='reservation' element={<Reservation />} />
+            <Route path='*' element={<NotFound />} />
+          </Route>
+
+          <Route path='adminlogin' element={<AdminLogIn />} />
+          <Route path='dashboard' element={<Protected><Dashboard /></Protected>}>
+            <Route path='menu' element={<DashboardMenu />} />
+            <Route path='staff' element={<DashboardStaff />} />
+          </Route>
+
         </Routes>
-        <Footer />
       </BrowserRouter>
+
 
     </div>
   );

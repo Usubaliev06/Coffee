@@ -4,6 +4,18 @@
 }
 .main {
 }
+.parallax {
+  height: 500px;
+  width: 100%;
+  padding: 100px 100px;
+}
+.parallax h1 {
+  font-size: 100px;
+  letter-spacing: 3px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.589);
+}
 .facts {
   height: fit-content;
   width: 100%;
@@ -102,6 +114,9 @@
   .whyWeDesCardRight {
     width: 80%;
   }
+  .parallax {
+    padding: 50px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -114,6 +129,9 @@
   .whyWeDesCard {
     flex-direction: column;
     gap: 20px;
+  }
+  .parallax h1 {
+    font-size: 60px;
   }
 }
 
@@ -129,11 +147,74 @@
   padding: 30px 50px;
   background-color: rgba(0, 0, 0, 0.507);
 }
-.bookingTableRight >a {
+.bookingTableRight > a {
   padding: 10px 20px;
-  color:white;
+  color: white;
   font-size: 30px;
   background-color: rgb(165, 139, 110);
   text-decoration: none;
   border-radius: 20px;
+}
+/* ///////////////////////////////////////////////////// */
+
+.staffWrapper {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 60px 30px;
+}
+.staffCards {
+  display: flex;
+  align-items: center;
+  gap: 40px 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.staffCard {
+  margin: 0 auto;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+}
+.staffCard > h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.staffImg {
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+.staffImg:hover > img {
+  height: 130%;
+}
+.staffImg:hover .staffImgOverlay {
+  transition: 0.5s;
+  opacity: 1;
+}
+.staffImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.7s;
+}
+.staffImgOverlay {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+.staffImgOverlay > p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
 }

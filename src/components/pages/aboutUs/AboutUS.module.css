@@ -1,0 +1,215 @@
+.aboutUsWrapper{
+  background-color: rgb(18, 22, 29);
+  width: 100%;
+}
+.parallax {
+  height: 500px;
+  width: 100%;
+  padding: 100px 80px;
+  margin-bottom: 50px;
+
+}
+.parallax h1 {
+  font-size: 100px;
+  letter-spacing: 3px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.589);
+  width: fit-content;
+}
+
+/* 
+@media screen and (max-width: 576px) {
+  .parallax h1 {
+    font-size: 60px;
+  }
+} */
+
+/* ///////////////////////////////////////////////////// */
+
+
+.whyWe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 30px;
+  background-image: url(../../../images/testimonials_bg2.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.whyWeImg {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whyWeImg > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.whyWeDes {
+  width: 45%;
+}
+.whyWeDes > h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.whyWeDesCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  background-color: rgb(165, 139, 110);
+  border-radius: 5px;
+  padding: 20px;
+}
+.whyWeDesCardLeft {
+  width: 40%;
+}
+.whyWeDesCardLeft > img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.whyWeDesCardRight {
+  width: 55%;
+}
+.whyWeDesCardRight>p{
+  color: white;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 960px) {
+  .whyWe {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .whyWeImg {
+    width: 100%;
+  }
+  .whyWeDes {
+    width: 100%;
+  }
+  .whyWeDesCardLeft {
+    width: 21%;
+  }
+
+  .whyWeDesCardRight {
+    width: 70%;
+  }
+  .parallax {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .whyWeImg > img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .whyWeDesCard {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .parallax h1 {
+    font-size: 60px;
+  }
+}
+
+/* ///////////////////////////////////////////////////// */
+
+.staffWrapper {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 60px 30px;
+}
+.staffCards {
+  display: flex;
+  align-items: center;
+  gap: 40px 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.staffCard {
+  margin: 0 auto;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+}
+.staffCard > h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.staffImg {
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+.staffImg:hover > img {
+  height: 130%;
+}
+.staffImg:hover .staffImgOverlay {
+  transition: 0.5s;
+  opacity: 1;
+}
+.staffImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.7s;
+}
+.staffImgOverlay {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+.staffImgOverlay > p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+}
+/* //////////////////////////////////////////////////////////// */
+
+.ourPlus{
+  height: fit-content;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap:30px;
+}
+.plusCard{
+width: 190px;
+margin: auto;
+}
+.plusCard>h2{
+font-size: 70px;
+}
+.plusCard>h1{
+  font-size: 25px;
+}
+.icons{
+  font-size: 70px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 15px;
+  border-radius: 20px;
+}

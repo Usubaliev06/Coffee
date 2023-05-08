@@ -116,3 +116,22 @@ padding: 20px;
   }
 }
 
+.bookingTable {
+  width: 100%;
+}
+.bookingTableLeft {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.507);
+}
+.bookingTableRight {
+  padding: 30px 50px;
+  background-color: rgba(0, 0, 0, 0.507);
+}
+.bookingTableRight >a {
+  padding: 10px 20px;
+  color:white;
+  font-size: 30px;
+  background-color: rgb(165, 139, 110);
+  text-decoration: none;
+  border-radius: 20px;
+}
