@@ -38,14 +38,16 @@ const Reservation = () => {
 
     if (name.length < 2) {
       setNameError("Имя слишком короткое");
+    }else if(name.match(/\d+/g) !== null){
+      setNameError("Имя не дожно содержать цифры");
     } else {
       setNameError("");
       verification+=1
     }
 
-    if (phone < 9) {
+    if (phone.length < 9) {
       setPhoneError("Введите телефон");
-    } else if (phone) {
+    } else if (phone.match(/[a-zA-Zа-яА-Я]+/g) !== null) {
       setPhoneError("Введите телефон корректно");
     } else {
       setPhoneError("");
@@ -90,6 +92,9 @@ const Reservation = () => {
       time,
     };
     validation(data)
+
+
+    console.log( name.match(/\d+/g))
 
     const message =`Доброго времени суток меня зовут ${data.name}, мой номер телефона ${data.phone}, я бы хотел(а) забронировать стол на ${data.people} человек, в эту дату ${data.date} , в это  ${data.time} время`
 

@@ -36,6 +36,7 @@ function App() {
 
           <Route path='adminlogin' element={<AdminLogIn />} />
           <Route path='dashboard' element={<Protected><Dashboard /></Protected>}>
+            <Route index element={<DashboardMenu />} />
             <Route path='menu' element={<DashboardMenu />} />
             <Route path='staff' element={<DashboardStaff />} />
           </Route>

@@ -1,0 +1,9 @@
+table{
+  border: 1px solid rgb(0, 0, 0);
+}
+th{
+  border: 1px solid rgb(255, 0, 0);
+}
+td{
+  border: 1px solid rgb(0, 255, 13);
+}
