@@ -22,26 +22,38 @@ const initialState = {
     status: null,
     error: null
   },
-  deleteMenuId: null,
+  // deleteMenuId: null,
+
   deleteMenu: {
+    status: null,
+    error: null
+  },
+  create:null,
+  createMenu: {
     status: null,
     error: null
   },
 }
 
-const deleteMenu = createAsyncThunk('deleteMenu', async (id, thunkApi) => {
-  try {
-    const response = await fetch(`${API}/menu/${id}`,{
-      method: 'DELETE',
-    })
-     await response.json()
-  } catch(e) {
-    thunkApi.rejectWithValue('error')
-  }
-  // console.log(id)
-
+const deleteMenu = createAsyncThunk('deleteMenu', async (id) => {
+  const response = await fetch(`${API}/menu/${id}`, {
+    method: 'DELETE',
+  })
+  if (!response.ok) throw new Error('err')
+  return id
 })
 
+const createMenu = createAsyncThunk('createMenu', async (data) => {
+  const response = await fetch(`${API}/menu/`, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error('err')
+  return response.json()
+})
 
 const getMenu = createAsyncThunk('menu', async () => {
   const response = await fetch(`${API}/menu`)
@@ -59,12 +71,11 @@ const getFastFood = createAsyncThunk('menu/getFastFood', async () => {
   const response = await fetch(`${API}/menu/fast-food`)
   const data = await response.json()
   if (!response.ok) throw new Error('err')
-  // console.log(11, data)
   return data
 })
 
 const getDesert = createAsyncThunk('menu/getDesert', async () => {
-  const response = await fetch(`${API}/category`)
+  const response = await fetch(`${API}/menu/dessert`)
   const data = await response.json()
   return data
 })
@@ -76,20 +87,37 @@ export const menuSlice = createSlice({
 
   extraReducers: (builder) => {
 
+    builder.addCase(createMenu.fulfilled, (state, action) => {
+      state.create = action.payload
+      state.createMenu.status = 'fulfilled'
+      state.createMenu.error = null
+    })
+    builder.addCase(createMenu.pending, (state) => {
+      state.create = null
+      state.createMenu.status = 'pending'
+      state.createMenu.error = null
+    })
+    builder.addCase(createMenu.rejected, (state, action) => {
+      state.create = null
+      state.createMenu.status = 'rejected'
+      state.createMenu.error = action.payload
+    })
+    
+    // //////////////////////////////////////////
+    // //////////////////////////////////////////
 
     builder.addCase(deleteMenu.fulfilled, (state, action) => {
-      console.log(action.payload)
-      state.menu = state.menu.filter((value) => value.id !== action.payload)
-      state.deleteMenu.status = 'fulfilled'
-      state.deleteMenu.error = null
+      state.menu = state.menu.filter((value) => value.id !== action.payload);
+      // state.fastFood = state.fastFood.filter((value) =>
+      state.deleteMenu.status = 'fulfilled';
+      state.deleteMenu.error = null;
     })
+
     builder.addCase(deleteMenu.pending, (state) => {
-      state.menu = null
       state.deleteMenu.status = 'pending'
       state.deleteMenu.error = null
     })
     builder.addCase(deleteMenu.rejected, (state, action) => {
-      state.menu = null
       state.deleteMenu.status = 'rejected'
       state.deleteMenu.error = action.payload
     })
@@ -177,7 +205,9 @@ export const menuActions = {
   getCoffee,
   getFastFood,
   getDesert,
-  deleteMenu
+  deleteMenu,
+  createMenu
 }
+console.log();
 
 export default menuSlice.reducer

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./AboutUS.module.css";
 import { Parallax } from "react-parallax";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,13 +27,23 @@ const AboutUs = () => {
   const { status } = useSelector((state) => state.staff.getData);
   const dispatch = useDispatch();
 
+  const [ staffError, setStaffError ] = useState(css.staffErrorNone);
+  const [ staffCards, setStaffCards ] = useState(css.staffCards);
+
+
   useEffect(() => {
     if (!status) {
       dispatch(staffActions.getData());
     }
-  }, []);
 
-  console.log(data, status);
+    if(status === "rejected" ){
+      setStaffError(css.staffError)
+      setStaffCards(css.staffCardsNone )
+    }
+
+  }, [ status]);
+
+  // console.log(data, status);
 
   useEffect(() => {
     topFunction();
@@ -44,12 +54,7 @@ const AboutUs = () => {
     return (
       <Loader/>
     )
-  }else if (status === "rejected"){
-    <div>
-      Error
-    </div>
-  }
-  else {
+  }else {
   return (
     <div className={css.aboutUsWrapper}>
       <Parallax
@@ -96,38 +101,29 @@ const AboutUs = () => {
         <div className={css.staffWrapper}>
           <h2>EXPERIENCE TEAM MEMBER</h2>
           <h1>Meet Our Professional Chefs</h1>
-          <div className={css.staffCards}>
 
-            <div className={css.staffCard}>
-              <h1>Anthony J. Bowman</h1>
-              <h2>Senior Chefs</h2>
-              <div className={css.staffImg}>
-                <img src={womenBarista} alt="" />
-                <div className={css.staffImgOverlay}>
-                  <p className={css.staffPhone}>bowmankf@gmail.com</p>
-                  <p className={css.staffEmail}>+012 (345) 678 99</p>
-                </div>
+          <div className={staffError}>
+                <h1>Sorry we have a problem now</h1>
               </div>
-            </div>
-            
-            {data?.map((item) => {
-              return (
-                  <div  key={item.id} className={css.staffCard}>
-                    <h1>{item.name}</h1>
-                    <h2>{item.position}</h2>
-                    <div className={css.staffImg}>
-                      <img src={item.image} alt="" />
-                      <div className={css.staffImgOverlay}>
-                        <p className={css.staffPhone}>{item.email}</p>
-                        <p className={css.staffEmail}>{item.number}</p>
+
+              <div className={staffCards}>
+                {data?.map((item) => {
+                  return (
+                    <div key={item.id} className={css.staffCard}>
+                      <h1>{item.name}</h1>
+                      <h2>{item.position}</h2>
+                      <div className={css.staffImg}>
+                        <img src={item.image} alt="" />
+                        <div className={css.staffImgOverlay}>
+                          <p className={css.staffPhone}>{item.email}</p>
+                          <p className={css.staffEmail}>{item.number}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-              );
-            })}
-
-
-          </div>
+                  );
+                })}
+              </div>
+        
         </div>
 
       <div className={css.ourPlus}>

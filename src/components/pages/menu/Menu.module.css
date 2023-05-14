@@ -25,14 +25,14 @@
   margin-bottom: 50px;
   color: white;
 }
-.cardsWrapper{
-width: 90%;
-height: fit-content;
-background-image: url(../../../images/category_bg.jpg);
-margin: 0 auto;
-padding: 20px;
+.cardsWrapper {
+  width: 90%;
+  height: fit-content;
+  background-image: url(../../../images/category_bg.jpg);
+  margin: 0 auto;
+  padding: 20px;
 }
-.cardsWrapper>h1{
+.cardsWrapper > h1 {
   color: white;
   font-size: 50px;
   font-weight: 200;
@@ -54,7 +54,10 @@ padding: 20px;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 50px;
-  border: 2px  solid rgb(176, 138, 112);
+  border: 2px solid rgb(176, 138, 112);
+}
+.cardsNone {
+  display: none;
 }
 .card {
   height: 250px;
@@ -65,7 +68,6 @@ padding: 20px;
   padding: 10px;
   background-color: rgba(240, 248, 255, 0.096);
   border-radius: 20px;
-
 }
 .cardImg {
   width: auto;
@@ -92,11 +94,11 @@ padding: 20px;
   font-weight: 300;
   margin-bottom: 20px;
 }
-.compound{
+.compound {
   font-weight: 300;
   margin-bottom: 20px;
 }
-.price{
+.price {
   color: rgb(176, 138, 112);
   font-size: 20px;
 }
@@ -127,11 +129,22 @@ padding: 20px;
   padding: 30px 50px;
   background-color: rgba(0, 0, 0, 0.507);
 }
-.bookingTableRight >a {
+.bookingTableRight > a {
   padding: 10px 20px;
-  color:white;
+  color: white;
   font-size: 30px;
   background-color: rgb(165, 139, 110);
   text-decoration: none;
   border-radius: 20px;
+}
+
+.menuError {
+  height: 100px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px;
+  border: 2px solid rgb(176, 138, 112);
+}
+.menuErrorNone {
+  display: none;
 }

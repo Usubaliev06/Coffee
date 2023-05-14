@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./Main.module.css";
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { staffActions } from "../../../store/staffSlice";
-import Loader from "../../loyaut/Loader"
+import Loader from "../../loyaut/Loader";
 
 import womenBarista from "../../../images/women_barista.jpg";
 import cap from "../../../images/cap_of_coffee.png";
 import coffeeThree from "../../../images/coffee_three.png";
 import bookingTableImg from "../../../images/booking_table.jpg";
 import parallaxImg from "../../../images/main_bg.jpg";
-
-
 
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
@@ -24,6 +22,10 @@ const Main = () => {
   const { status } = useSelector((state) => state.staff.getData);
   const dispatch = useDispatch();
 
+  const [ staffError, setStaffError ] = useState(css.staffErrorNone);
+  const [ staffCards, setStaffCards ] = useState(css.staffCards);
+
+
   useEffect(() => {
     topFunction();
   }, []);
@@ -32,14 +34,18 @@ const Main = () => {
     if (!status) {
       dispatch(staffActions.getData());
     }
-  }, []);
 
-  console.log(data, status);
+    if(status === "rejected" ){
+      setStaffError(css.staffError)
+      setStaffCards(css.staffCardsNone )
+    }
+
+  }, [ status]);
+
+  // console.log(data, status);
 
   if (status === "pending") {
-    return <Loader/>
-  } else if (status === "rejected") {
-    return <div>Error</div>;
+    return <Loader />;
   } else {
     return (
       <div className={css.mainWrapper}>
@@ -127,41 +133,30 @@ const Main = () => {
             </section>
             {/* //////////////////////////////////////////////////////////////////// */}
 
-          
-
             <section className={css.staffWrapper}>
               <h2>EXPERIENCE TEAM MEMBER</h2>
               <h1>Meet Our Professional Chefs</h1>
-              <div className={css.staffCards}>
 
-                <div className={css.staffCard}>
-                  <h1>Anthony J. Bowman</h1>
-                  <h2>Senior Chefs</h2>
-                  <div className={css.staffImg}>
-                    <img src={womenBarista} alt="" />
-                    <div className={css.staffImgOverlay}>
-                      <p className={css.staffPhone}>bowmankf@gmail.com</p>
-                      <p className={css.staffEmail}>+012 (345) 678 99</p>
-                    </div>
-                  </div>
-                </div>
+              <div className={staffError}>
+                <h1>Sorry we have a problem now</h1>
+              </div>
 
+              <div className={staffCards}>
                 {data?.map((item) => {
-              return (
-                  <div  key={item.id} className={css.staffCard}>
-                    <h1>{item.name}</h1>
-                    <h2>{item.position}</h2>
-                    <div className={css.staffImg}>
-                      <img src={item.image} alt="" />
-                      <div className={css.staffImgOverlay}>
-                        <p className={css.staffPhone}>{item.email}</p>
-                        <p className={css.staffEmail}>{item.number}</p>
+                  return (
+                    <div key={item.id} className={css.staffCard}>
+                      <h1>{item.name}</h1>
+                      <h2>{item.position}</h2>
+                      <div className={css.staffImg}>
+                        <img src={item.image} alt="" />
+                        <div className={css.staffImgOverlay}>
+                          <p className={css.staffPhone}>{item.email}</p>
+                          <p className={css.staffEmail}>{item.number}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-              );
-            })}
-
+                  );
+                })}
               </div>
             </section>
 

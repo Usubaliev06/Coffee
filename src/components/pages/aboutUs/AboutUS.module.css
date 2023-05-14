@@ -139,6 +139,17 @@
   flex-wrap: wrap;
   margin-top: 30px;
 }
+.staffCardsNone {
+display: none;
+}
+.staffError{
+  border: 2px solid white;
+  width: fit-content;
+  margin: 30px auto;
+}
+.staffErrorNone{
+  display: none;
+}
 .staffCard {
   margin: 0 auto;
   height: 400px;
