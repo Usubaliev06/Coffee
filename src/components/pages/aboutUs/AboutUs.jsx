@@ -6,7 +6,6 @@ import { staffActions } from "../../../store/staffSlice";
 import Loader from "../../loyaut/Loader";
 
 
-import womenBarista from "../../../images/women_barista.jpg";
 import aboutUsBarista from "../../../images/aboutUsBarista.png";
 import aboutUsFlovers from "../../../images/aboutUSFlovers.png";
 
