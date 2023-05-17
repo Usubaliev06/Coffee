@@ -5,11 +5,11 @@ const DashbordMenuTableBody = ({ meal, handleDelete, handleEdit }) => {
             return (
               <tr key={item.id}>
                 <td>{item.name}</td>
+                <td>{item.description}</td>
                 <td>{item.image}</td>
-                <td>{item.position}</td>
-                <td>{item.number}</td>
-                <td>{item.email}</td>
+                <td>{item.price}</td>
                 <td>{item.id}</td>
+                <td>{item.category}</td>
                 <td>
                   <button onClick={() => handleDelete(item.id)}>Delete</button>
                 </td>

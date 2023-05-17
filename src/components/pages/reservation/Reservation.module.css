@@ -32,6 +32,7 @@
 .formWrapper h1 {
   margin-bottom: 30px;
   font-weight: 300;
+  font-size: 20px;
 }
 .formWrapper button {
   padding: 15px 70px;

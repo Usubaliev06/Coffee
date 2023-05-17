@@ -26,7 +26,7 @@ const DashboardStaff = () => {
 
   const [form, setForm] = useState({
     position: "",
-    imageS: "",
+    imageSrc: "",
     name: "",
     number: "",
     email: "",

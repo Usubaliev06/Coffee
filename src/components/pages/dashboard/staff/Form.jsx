@@ -1,7 +1,7 @@
 import css from "../Dashboard.module.css";
 const Form = ({ form, onChange, onClose, onSubmit }) => {
   return (
-      <div className={css.wrapper}>
+      <div className={css.formWrapper}>
         <button onClick={onClose}>Close</button>
         <input
           type="text"

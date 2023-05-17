@@ -3,10 +3,11 @@ const DashbordMenuTableHead = () => {
     <thead>
       <tr>
           <th>Name</th>
-          <th>Decription</th>
+          <th>Description</th>
           <th>image</th>
           <th>Price</th>
           <th>ID</th>
+          <th>Category</th>
           <th>Delte</th>
           <th>Edit</th>
           </tr>

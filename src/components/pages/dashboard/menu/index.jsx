@@ -24,7 +24,7 @@ const DashbordMenu = () => {
     (state) => state.menu.deleteMenu
   );
 
-// ///////////////////////////////////////////////
+  // ///////////////////////////////////////////////
 
   const { status: menuStatus } = useSelector((state) => state.menu.getMenu);
 
@@ -54,7 +54,7 @@ const DashbordMenu = () => {
 
   const [form, setForm] = useState({
     description: "",
-    image: null,
+    imageSrc: null,
     name: "",
     price: "",
     category: "",
@@ -105,8 +105,13 @@ const DashbordMenu = () => {
 
   const onFormSubmit = () => {
     console.log("onFormSubmit", form);
-    if (formAction.name === "new") dispatch(menuActions.createMenu(form));
-    else dispatch(menuActions.editMenu({data:form,id:formAction.id}));
+    if (formAction.name === "new") {
+      dispatch(menuActions.createMenu(form));
+      setIsOpen(false);
+    } else {
+      dispatch(menuActions.editMenu({ data: form, id: formAction.id }))
+      setIsOpen(false);
+    }
   };
 
   return (
