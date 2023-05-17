@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { staffActions } from "../../../store/staffSlice";
 import Loader from "../../loyaut/Loader";
-
+// https://codepen.io/ge1doot/pen/LZdOwj
+// https://codepen.io/aderaaij/pen/XWpMONO
 import womenBarista from "../../../images/women_barista.jpg";
 import cap from "../../../images/cap_of_coffee.png";
 import coffeeThree from "../../../images/coffee_three.png";

@@ -22,14 +22,15 @@ const initialState = {
     status: null,
     error: null
   },
-  // deleteMenuId: null,
-
   deleteMenu: {
     status: null,
     error: null
   },
-  create:null,
   createMenu: {
+    status: null,
+    error: null
+  },
+  editMenu: {
     status: null,
     error: null
   },
@@ -41,6 +42,18 @@ const deleteMenu = createAsyncThunk('deleteMenu', async (id) => {
   })
   if (!response.ok) throw new Error('err')
   return id
+})
+
+const editMenu = createAsyncThunk('editMenu', async ({data,id}) => {
+  const response = await fetch(`${API}/menu/${id}/`, {
+    method: 'PUT',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error('err')
+  return response.json()
 })
 
 const createMenu = createAsyncThunk('createMenu', async (data) => {
@@ -72,7 +85,7 @@ const getFastFood = createAsyncThunk('menu/getFastFood', async () => {
   const data = await response.json()
   if (!response.ok) throw new Error('err')
   return data
-})
+}) 
 
 const getDesert = createAsyncThunk('menu/getDesert', async () => {
   const response = await fetch(`${API}/menu/dessert`)
@@ -87,18 +100,36 @@ export const menuSlice = createSlice({
 
   extraReducers: (builder) => {
 
-    builder.addCase(createMenu.fulfilled, (state, action) => {
+    builder.addCase(editMenu.fulfilled, (state, action) => {
       state.create = action.payload
+      state.editMenu.status = 'fulfilled'
+      state.editMenu.error = null
+    })
+    builder.addCase(editMenu.pending, (state) => {
+      state.create = null
+      state.editMenu.status = 'pending'
+      state.editMenu.error = null
+    })
+    builder.addCase(editMenu.rejected, (state, action) => {
+      state.create = null
+      state.editMenu.status = 'rejected'
+      state.editMenu.error = action.payload
+    })
+
+    // //////////////////////////////////////////
+    // //////////////////////////////////////////
+
+
+    builder.addCase(createMenu.fulfilled, (state, action) => {
+      state.menu.push(action.payload)
       state.createMenu.status = 'fulfilled'
       state.createMenu.error = null
     })
     builder.addCase(createMenu.pending, (state) => {
-      state.create = null
       state.createMenu.status = 'pending'
       state.createMenu.error = null
     })
     builder.addCase(createMenu.rejected, (state, action) => {
-      state.create = null
       state.createMenu.status = 'rejected'
       state.createMenu.error = action.payload
     })
@@ -206,8 +237,9 @@ export const menuActions = {
   getFastFood,
   getDesert,
   deleteMenu,
-  createMenu
+  createMenu,
+  editMenu
 }
-console.log();
+
 
 export default menuSlice.reducer

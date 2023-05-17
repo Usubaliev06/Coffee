@@ -14,8 +14,8 @@ import AdminLogIn from './components/pages/adminLogIn/AdminLogIn';
 import Dashboard from './components/pages/dashboard/Dashboard';
 
 import Protected from './components/protected/Protected';
-import DashboardMenu from './components/pages/dashboard/DashboardMenu';
-import DashboardStaff from './components/pages/dashboard/DashboardStaff';
+import DashboardMenu from './components/pages/dashboard/menu';
+import DashboardStaff from './components/pages/dashboard/staff';
 
 
 function App() {

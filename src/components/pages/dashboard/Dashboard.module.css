@@ -11,14 +11,3 @@ table {
   width: 100%;
 }
 
-.modalOpen {
-  opacity: 1;
-  width: 70%;
-  border: 1px solid black;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-}
-.modalClose {
-  opacity: 0;
-}

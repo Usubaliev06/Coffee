@@ -26,23 +26,21 @@ const Reservation = () => {
   const [dateError, setDateError] = useState("");
   const [peopleError, setPeopleError] = useState("");
 
-
   function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   const validation = ({ name, phone, date, email, people }) => {
-    
-  let verification = 0;
+    let verification = 0;
 
     if (name.length < 2) {
       setNameError("Имя слишком короткое");
-    }else if(name.match(/\d+/g) !== null){
+    } else if (name.match(/\d+/g) !== null) {
       setNameError("Имя не дожно содержать цифры");
     } else {
       setNameError("");
-      verification+=1
+      verification += 1;
     }
 
     if (phone.length < 9) {
@@ -51,7 +49,7 @@ const Reservation = () => {
       setPhoneError("Введите телефон корректно");
     } else {
       setPhoneError("");
-      verification+=1
+      verification += 1;
     }
 
     if (email.length < 4) {
@@ -60,7 +58,7 @@ const Reservation = () => {
       setEmailError("Введите почту корректно");
     } else {
       setEmailError("");
-      verification+=1
+      verification += 1;
     }
 
     if (date === "") {
@@ -69,7 +67,7 @@ const Reservation = () => {
       setDateError("Введите дату корректно");
     } else {
       setDateError("");
-      verification+=1
+      verification += 1;
     }
 
     if (people === "") {
@@ -78,9 +76,9 @@ const Reservation = () => {
       setPeopleError("Введите кол-во 1-6");
     } else {
       setPeopleError("");
-      verification+=1
+      verification += 1;
     }
-    return verification
+    return verification;
   };
   const handleBookTable = () => {
     const data = {
@@ -91,16 +89,15 @@ const Reservation = () => {
       people,
       time,
     };
-    validation(data)
+    // validation(data);
 
+    const message = `Доброго времени суток меня зовут ${data.name}, мой номер телефона ${data.phone}, я бы хотел(а) забронировать стол на ${data.people} человек, в эту дату ${data.date} , в это  ${data.time} время`;
 
-    console.log( name.match(/\d+/g))
-
-    const message =`Доброго времени суток меня зовут ${data.name}, мой номер телефона ${data.phone}, я бы хотел(а) забронировать стол на ${data.people} человек, в эту дату ${data.date} , в это  ${data.time} время`
-
-console.log(validation(data))
-
-    console.log(data);
+    console.log(validation(data));
+    const key = validation(data)
+    if ( key == 5) {
+      document.location=`https://api.whatsapp.com/send?phone=996505545476&text=${message}`
+    }
   };
 
   useEffect(() => {
