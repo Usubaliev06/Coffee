@@ -94,9 +94,9 @@ const Reservation = () => {
     const message = `Доброго времени суток меня зовут ${data.name}, мой номер телефона ${data.phone}, я бы хотел(а) забронировать стол на ${data.people} человек, в эту дату ${data.date} , в это  ${data.time} время`;
 
     console.log(validation(data));
-    const key = validation(data)
-    if ( key == 5) {
-      document.location=`https://api.whatsapp.com/send?phone=996505545476&text=${message}`
+    const key = validation(data);
+    if (key == 5) {
+      document.location = `https://api.whatsapp.com/send?phone=996505545476&text=${message}`;
     }
   };
 
@@ -200,53 +200,48 @@ const Reservation = () => {
 
         <div className={css.inst}>
           <div className={css.instCard}>
-            <div className={css.overlayInst}>
-              <AiFillInstagram />
-            </div>
-            <a href="#">
-              {" "}
-              <img src={food1} alt="" />
+            <a href="https://instagram.com/biscuit_coffeeshop?igshid=MzRlODBiNWFlZA==">
+              <div className={css.overlayInst}>
+                <AiFillInstagram />
+              </div>
             </a>
+            <img src={food1} alt="" />
           </div>
 
           <div className={css.instCard}>
-            <div className={css.overlayInst}>
-              <AiFillInstagram />
-            </div>
-            <a href="#">
-              {" "}
-              <img src={food2} alt="" />
+            <a href="https://instagram.com/biscuit_coffeeshop?igshid=MzRlODBiNWFlZA==">
+              <div className={css.overlayInst}>
+                <AiFillInstagram />
+              </div>
             </a>
+            <img src={food2} alt="" />
           </div>
 
           <div className={css.instCard}>
-            <div className={css.overlayInst}>
-              <AiFillInstagram />
-            </div>
-            <a href="#">
-              {" "}
-              <img src={food3} alt="" />
+            <a href="https://instagram.com/biscuit_coffeeshop?igshid=MzRlODBiNWFlZA==">
+              <div className={css.overlayInst}>
+                <AiFillInstagram />
+              </div>
             </a>
+            <img src={food3} alt="" />
           </div>
 
           <div className={css.instCard}>
-            <div className={css.overlayInst}>
-              <AiFillInstagram />
-            </div>
-            <a href="#">
-              {" "}
-              <img src={food4} alt="" />
+            <a href="https://instagram.com/biscuit_coffeeshop?igshid=MzRlODBiNWFlZA==">
+              <div className={css.overlayInst}>
+                <AiFillInstagram />
+              </div>
             </a>
+            <img src={food4} alt="" />
           </div>
 
           <div className={css.instCard}>
+          <a href="https://instagram.com/biscuit_coffeeshop?igshid=MzRlODBiNWFlZA==">
             <div className={css.overlayInst}>
               <AiFillInstagram />
             </div>
-            <a href="#">
-              {" "}
+            </a>
               <img src={food5} alt="" />
-            </a>
           </div>
         </div>
       </div>

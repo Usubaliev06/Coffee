@@ -15,6 +15,8 @@ const Form = ({ form, onChange, onClose, onSubmit }) => {
           placeholder="image src"
           value={form.imageSrc}
           onChange={onChange}
+          name="imageSrc"
+
         />
         <input
           type="text"

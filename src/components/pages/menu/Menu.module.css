@@ -83,7 +83,8 @@ height: 250px;
 .cardDes {
   width: 50%;
   height: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow: hidden;
 }
 .cardDes > h1 {
   font-size: 30px;

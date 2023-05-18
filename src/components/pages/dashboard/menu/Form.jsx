@@ -20,10 +20,11 @@ const Form = ({ form, onChange, onClose, onSubmit }) => {
         />
         <input
           type="text"
-          placeholder="image src"
+          placeholder="imageSrc"
           value={form.imageSrc}
           onChange={onChange}
-        />
+          name="imageSrc"
+        /> 
         <input
           type="text"
           placeholder="price"

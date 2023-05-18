@@ -3,8 +3,9 @@ import css from "./Menu.module.css";
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
 import foto1 from "../../../images/enis-yavuz-sBS-Ufi0f1g-unsplash.jpg";
-import coffeeImg1 from "../../../images/jeremy-yap-jn-HaGWe4yw-unsplash.jpg";
-import coffeeImg2 from "../../../images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg";
+// import coffeeImg1 from "../../../images/jeremy-yap-jn-HaGWe4yw-unsplash.jpg";
+// import fastFoodImg1 from "../../../images/food3.jpg";
+// import desertImg1 from "../../../images/Fried-Ice-Cream-Dessert-Bars-_EXPS_SDJJ19_232652_B02_06_1b_rms-2.jpg";
 import bookingTableImg from "../../../images/booking_table.jpg";
 import { menuActions } from "../../../store/menuSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -137,7 +138,6 @@ const Menu = () => {
                       <div className={css.cardImg}>
                         <img src={item.image} alt="" />'
                       </div>
-
                       <div className={css.cardDes}>
                         <h1>{item.name}</h1>
                         <p className={css.compound}>{item.description}</p>

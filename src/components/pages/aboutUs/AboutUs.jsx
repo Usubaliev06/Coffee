@@ -8,6 +8,8 @@ import Loader from "../../loyaut/Loader";
 
 import aboutUsBarista from "../../../images/aboutUsBarista.png";
 import aboutUsFlovers from "../../../images/aboutUSFlovers.png";
+// import barista from "../../../images/brooke-cagle-9fHMo1-5Io8-unsplash.jpg";
+
 
 import { FaGem} from "react-icons/fa";
 import { BsPeopleFill} from "react-icons/bs";

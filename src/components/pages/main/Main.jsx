@@ -7,6 +7,7 @@ import { staffActions } from "../../../store/staffSlice";
 import Loader from "../../loyaut/Loader";
 // https://codepen.io/ge1doot/pen/LZdOwj
 // https://codepen.io/aderaaij/pen/XWpMONO
+// import barista from "../../../images/brooke-cagle-9fHMo1-5Io8-unsplash.jpg";
 import womenBarista from "../../../images/women_barista.jpg";
 import cap from "../../../images/cap_of_coffee.png";
 import coffeeThree from "../../../images/coffee_three.png";

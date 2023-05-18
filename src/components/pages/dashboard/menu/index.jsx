@@ -54,7 +54,7 @@ const DashbordMenu = () => {
 
   const [form, setForm] = useState({
     description: "",
-    imageSrc: null,
+    imageSrc: "",
     name: "",
     price: "",
     category: "",

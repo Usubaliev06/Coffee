@@ -21,7 +21,6 @@ const DashboardStaff = () => {
 
   const handleDelete = (id) => dispatch(staffActions.deleteData(id));
 
-
   const [isOpen, setIsOpen] = useState(false);
 
   const [form, setForm] = useState({
@@ -47,7 +46,7 @@ const DashboardStaff = () => {
       const finded = data.find((m) => m.id === formAction.id);
       setForm(finded);
     }
-  }, [isOpen, formAction,data]);
+  }, [isOpen, formAction, data]);
 
   const onChange = (e) => {
     setForm({
@@ -56,13 +55,14 @@ const DashboardStaff = () => {
     });
   };
 
-
   const onFormSubmit = () => {
     console.log("onFormSubmit", form);
-    if (formAction.name === "new") dispatch(staffActions.createData(form));
-    else dispatch(staffActions.editData({data:form,id:formAction.id}));
+    if (formAction.name === "new") {
+      dispatch(staffActions.createData(form));
+    } else {
+      dispatch(staffActions.editData({ data: form, id: formAction.id }));
+    }
   };
-
 
   return (
     <div>
