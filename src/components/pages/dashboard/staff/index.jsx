@@ -4,6 +4,7 @@ import { staffActions } from "../../../../store/staffSlice";
 import DashbordStaffTableBody from "./TableBody";
 import DashbordStaffTableHead from "./TableHead";
 import Form from "./Form";
+import css from '../Dashboard.module.css'
 
 const DashboardStaff = () => {
   const dispatch = useDispatch();
@@ -70,7 +71,7 @@ const DashboardStaff = () => {
         <DashbordStaffTableHead />
         <DashbordStaffTableBody data={data} {...{ handleDelete, handleEdit }} />
       </table>
-      <button onClick={() => setIsOpen(true)}>Modal</button>
+      <button className={css.create} onClick={() => setIsOpen(true)}>Create</button>
       {isOpen && (
         <Form
           form={form}

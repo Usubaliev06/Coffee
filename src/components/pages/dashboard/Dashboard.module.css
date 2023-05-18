@@ -66,3 +66,8 @@ td > button {
 .dashboardNav>a:hover{
   background-color: rgb(145, 143, 143);
 }
+.create{
+  width: 200px;
+  font-size: 50px;
+  margin: 20px;
+}

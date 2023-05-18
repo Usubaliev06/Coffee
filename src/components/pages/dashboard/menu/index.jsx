@@ -125,7 +125,7 @@ const DashbordMenu = () => {
           {...{ handleDelete, handleEdit }}
         />
       </table>
-      <button onClick={() => setIsOpen(true)}>Modal</button>
+      <button className={css.create}  onClick={() => setIsOpen(true)}>Create</button>
       {isOpen && (
         <Form
           form={form}
